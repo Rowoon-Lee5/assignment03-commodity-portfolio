@@ -1,0 +1,17 @@
+Project_8조 데이터 (데기투 8조)
+
+[다운로드 — 로그인 필요 없음]
+data 폴더 전체(약 25MB, 압축 12MB): [여기에 네이버 MYBOX 공유 링크]
+받은 Project_8조_data.zip을 풀면 나오는 data 폴더를 Project_8조_code의 Project_8조.ipynb 옆에 두고 노트북을 실행하면 된다.
+
+[파일별 원출처] 모두 받은 그대로이며 가공은 코드에서만 한다.
+- data/DataGuide/주식/X01_...KOSPI...xlsx : KOSPI 종가지수 일간 (FnGuide DataGuide, 학교 구독)
+- data/DataGuide/원자재_업종/D33_...비영업일포함...xlsx : CRB 선물지수 일간 (DataGuide 경제지표)
+- data/DataGuide/원자재_업종/D31_원자재선물ETF8개...xlsx : 국내 원자재 선물 ETF 수정주가 (DataGuide)
+- data/DataGuide/원자재_업종/D40_코스피업종종가지수18개...xlsx, sector_tr_dg.xlsx : 코스피 업종지수 (DataGuide)
+- data/DataGuide/금리/무위험이자율후보_DataGuide_시장금리15종_일간...xlsx : 국고채 3년·회사채 AA- 3년 일간 금리 (DataGuide)
+- data/DataGuide/채권지수/bond_tr_index.xlsx : 국고채 총수익지수 FBI.KTB.01.2 (DataGuide)
+- data/ECOS/... : 한국은행 경제통계시스템 ECOS (https://ecos.bok.or.kr) 시장금리 721Y001, 정책금리 722Y001, 콜금리 817Y002, 원/달러 731Y004
+- data/ECOS_Q10조사3/404Y014_M_505AA_20261121.json : ECOS 생산자물가지수 부동산서비스
+- data/FRED/INTDSRKRM193N_20261116.csv : IMF 한국 재할인율 (https://fred.stlouisfed.org/series/INTDSRKRM193N)
+- data/KRX/금시장_일별/gold_*.json : KRX 금시장 일별 시세 1kg 금현물 (KRX 정보데이터시스템 Open API)
