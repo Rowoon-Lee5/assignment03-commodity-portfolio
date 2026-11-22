@@ -1,12 +1,12 @@
 # Project_8조 코드
 
 1. `Project_8조_data.txt`의 링크에서 `data` 폴더를 받아 이 README 옆(Project_8조.ipynb와 같은 폴더)에 둔다.
-2. Python 3.11, pandas 2.2, numpy, scipy, matplotlib, openpyxl, jupyter (`pip install -r requirements.txt`).
-3. `Project_8조.ipynb`를 위에서 아래로 실행한다(Jupyter '모두 실행'). 보고서의 표 1~7, 부록 A와 그림 1~5가 차례로 나오고 `결과/`에 CSV가 남는다. 전체 실행은 1~2분.
+2. `pip install -r requirements.txt` (Python 3.10·3.11, pandas 2.2·2.3에서 돌려 봄).
+3. `Project_8조.ipynb`를 위에서 아래로 실행한다(Jupyter '모두 실행'). 보고서의 표 1~7, 부록 A와 그림 1~5가 차례로 나오고 `결과/`에 CSV가 남는다. 처음 실행할 때 CRB 자료를 읽어 `_캐시/`에 저장하므로 첫 실행이 조금 더 걸린다(1분 안팎).
 
 | 파일 | 내용 |
 |---|---|
-| `Project_8조.ipynb` | 따라하기(원문 표4·5·7) → 확장1·2·3 → 부록(국면 금리 후보, 시뮬레이션, 채권 총수익률 확인) |
+| `Project_8조.ipynb` | 따라하기(원문 표4·5·7) → 확장1·2·3 → 부록 A(국면 금리 후보) → 참고 1·2(시뮬레이션, 채권 총수익률 확인) |
 | `공통/자료.py` | 원본을 읽어 월 수익률 만들기 |
 | `공통/최적화.py` | 공매도·차입 없는 평균-분산 포트폴리오 |
 | `공통/국면.py` | 금리 국면 이름표와 금리 후보 |

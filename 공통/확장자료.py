@@ -1,17 +1,17 @@
-"""확장1 원자재 수단(KRX 금현물, 원자재 선물 ETF, 원자재 민감 업종지수)의 월 수익률. 원문에 없는 우리 추가."""
+"""확장1 원자재 수단(KRX 금현물, 원자재 선물 ETF, 업종지수)의 월 수익률."""
 import json
 from datetime import datetime
 import pandas as pd
 import 자료 as A
 
 폴더 = A.D / 'DataGuide/원자재_업종'
-ETF파일 = ('D31_원자재선물ETF8개_종가_수정주가_수정주가TR_거래대금_NAV_달력기준_일간_19900101-20261113.xlsx', 'Sheet1 (2)')
+ETF파일 = ('D31_원자재선물ETF8개_종가_수정주가_수정주가TR_거래대금_NAV_달력기준_일간_19900101-20261113.xlsx',
+          'Sheet1 (2)')
 업종파일 = [('D40_코스피업종종가지수18개_건설포함_I31000040F_달력기준_일간_19900101-20261116.xlsx', 'Sheet2'),
            ('sector_tr_dg.xlsx', 'Sheet1')]
-# 회원 결정 2026-11-22: ETF는 수정주가, 상장폐지된 TIGER 금속선물(H) 뺀 7개, 업종은 두 논문(이윤정·윤성민 2022, 전지홍 외 2016) 공통인 건설·통신
 ETF항목 = '수정주가(원)'
-뺄ETF = ['TIGER 금속선물(H)']
-업종 = ['코스피 건설', '코스피 통신']
+뺄ETF = ['TIGER 금속선물(H)']   # 상장폐지
+업종 = ['코스피 건설', '코스피 통신']   # 이윤정·윤성민(2022)과 전지홍 외(2016)에 함께 나옴
 
 
 def dg(파일, 시트):
@@ -26,8 +26,8 @@ def dg(파일, 시트):
 
 
 def 거래월말(t):
-    """그 달 마지막 거래일 값(빈칸 그대로). 받은 날이 달 중간이라 덜 찬 마지막 달은 뺀다."""
-    # 자료.월말()은 빈칸을 건너뛰어 상장폐지 달에 하루치 수익률이 잡히므로 쓰지 않는다.
+    """그 달 마지막 거래일 값. 덜 찬 마지막 달은 뺀다."""
+    # 자료.월말()은 빈칸을 건너뛰어서 상장폐지된 달에 엉뚱한 수익률이 생긴다
     m = t.groupby(t.index.to_period('M')).tail(1).iloc[:-1]
     m.index = m.index.to_period('M').to_timestamp('M')
     return m
@@ -64,5 +64,5 @@ def 기간B(수익률표):
     a, b = ok.idxmax(), 수익률표.index[-1]
     빈 = 수익률표.loc[a:b].isna().any()
     if 빈.any():
-        raise ValueError(f'기간 B({a:%Y-%m}~{b:%Y-%m}) 안에 빈칸이 있는 수단: {list(빈[빈].index)}')
+        raise ValueError(f'{a:%Y-%m}~{b:%Y-%m} 안에 빈칸: {list(빈[빈].index)}')
     return a, b

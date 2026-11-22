@@ -1,7 +1,7 @@
 Project_8조 데이터 (데기투 8조)
 
 [다운로드 — 로그인 필요 없음]
-data 폴더 전체(약 25MB, 압축 12MB): [여기에 네이버 MYBOX 공유 링크]
+data 폴더 전체(약 25MB, 압축 약 11MB): [여기에 네이버 MYBOX 공유 링크]
 받은 Project_8조_data.zip을 풀면 나오는 data 폴더를 Project_8조_code의 Project_8조.ipynb 옆에 두고 노트북을 실행하면 된다.
 
 [파일별 원출처] 모두 받은 그대로이며 가공은 코드에서만 한다.
