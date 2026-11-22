@@ -13,7 +13,7 @@ def 위험(w, S):
 def 통계(수익률표):
     if 수익률표.isna().any().any():
         raise ValueError('수익률표에 빈칸이 있음')
-    # n으로 나눈다: 원문 표5의 최고 위험이 주식의 모표준편차와 같다
+    # n으로 나눈다: 원문 표5의 최고 위험이 모표준편차와 같다
     return 수익률표.mean().values, np.cov(수익률표.values, rowvar=False, ddof=0)
 
 
